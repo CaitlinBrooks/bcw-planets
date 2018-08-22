@@ -42,3 +42,5 @@ router.delete('/:id', (req, res, next) => {
       message: 'Successfully removed galaxy.'
     }))
 })
+
+module.exports = router
