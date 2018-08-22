@@ -30,8 +30,13 @@ let schema = new Schema({
     type: ObjectId,
     ref: 'Galaxy',
     required: true
-  }
+  },
 
+  starId: {
+    type: ObjectId,
+    ref: 'Star',
+    required: true
+  }
 
 })
 
