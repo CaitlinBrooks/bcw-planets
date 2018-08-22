@@ -1,6 +1,7 @@
 let mongoose = require('mongoose')
 let Schema = mongoose.Schema
-let SchemaName = 'Star'
+let ObjectId = Schema.Types.ObjectId
+let schemaName = 'Star'
 
 
 let schema = new Schema({
@@ -10,8 +11,28 @@ let schema = new Schema({
   },
   description: {
     type: String,
-    default: 'No description included'
+    default: 'No Description Choose your own fate!'
+  },
+  color: {
+    type: String,
+    enum: [
+      'red',
+      'yellow',
+      'blue',
+      'orange',
+      'white',
+      'black'
+    ],
+    required: true
+  },
+
+  galaxyId: {
+    type: ObjectId,
+    ref: 'Galaxy',
+    required: true
   }
+
+
 })
 
-module.exports = mongoose.model(SchemaName, schema)
+module.exports = mongoose.model(schemaName, schema)
